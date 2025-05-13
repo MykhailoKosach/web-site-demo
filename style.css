@@ -1,0 +1,259 @@
+@font-face {
+    font-family: 'Dharma Gothic Rounded';
+    src: url('font/DharmaGothicRndM-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dharma Gothic Rounded';
+    src: url('font/DharmaGothicRndE-Light.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dharma Gothic Rounded';
+    src: url('font/DharmaGothicRndE-Bold.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+h1, h2 {
+    font-family: 'Dharma Gothic Rounded', sans-serif;
+    font-weight: 900;
+}
+h3, .btn, nav, footer {
+    font-family: 'Dharma Gothic Rounded', sans-serif;
+    font-weight: 700;
+}
+body, p, li, a, span {
+    font-family: 'Dharma Gothic Rounded', sans-serif;
+    font-weight: 400;
+}
+
+body {
+  color: #3a2e1a;
+  background: #F5F5DC;
+  line-height: 1.6;
+}
+
+a { 
+  color: #7c5a1b; 
+  text-decoration: none; 
+  margin-right: 16px;
+}
+a:hover { 
+  text-decoration: underline; 
+}
+
+header.hero {
+  background: url('storm-background.jpg') center/cover no-repeat;
+  height: 60vh;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 24px rgba(120,100,50,0.08);
+}
+
+header.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(245, 245, 220, 0.8);
+}
+
+header.hero * {
+  position: relative;
+  z-index: 1;
+}
+
+header.hero h1 {
+  font-size: 3rem;
+  margin-bottom: .5rem;
+  color: #7c5a1b;
+  animation: stormy-wave 2s ease-in-out infinite alternate;
+}
+
+@keyframes stormy-wave {
+  0% { letter-spacing: 1px; transform: translateY(0); }
+  100% { letter-spacing: 3px; transform: translateY(-3px); }
+}
+
+header.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: .75rem 1.5rem;
+  background: #e2c799;
+  border: 2px solid #7c5a1b;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #7c5a1b;
+  transition: background 0.2s;
+}
+
+em {
+  color: #555; 
+  text-align: center; 
+  margin-top: 2rem;
+  margin-right: 5px;
+}
+
+
+.btn:hover {
+  background: #f2e5c2;
+}
+
+nav.language-switcher {
+  text-align: right;
+  padding: 1rem;
+  background: #EDE8D0;
+}
+
+nav.language-switcher a {
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+section {
+  padding: 3rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-light { background: #FFFDF4; }
+.section-dark { background: #EDE8D0; }
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #e2c799;
+  display: inline-block;
+  padding-bottom: .5rem;
+  color: #7c5a1b;
+}
+
+section p { margin-bottom: 1.5rem; }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border: 2px solid #bfa77a;
+}
+
+.director {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.director img {
+  flex: 0 0 200px;
+  width: 200px;
+  height: auto;
+  border: 2px solid #bfa77a;
+}
+
+.director .info { flex: 1; }
+
+.social-links a {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #EDE8D0;
+  color: #7c5a1b;
+  font-size: .9rem;
+}
+
+@media (max-width: 600px) {
+  header.hero h1 { font-size: 2rem; }
+  .director { flex-direction: column; align-items: flex-start; }
+  .director img { width: 100%; max-width: 300px; margin-bottom: 1rem; }
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 1rem; /* 16px */
+  }
+  header.hero h1 {
+    font-size: 3rem;
+  }
+  header.hero p,
+  section p,
+  .section-light p,
+  .section-dark p {
+    font-size: 1.1rem;
+  }
+  section h2 {
+    font-size: 2rem;
+  }
+    em {
+      font-size: 1rem; 
+  }
+}
+
+/* Laptop view (≥ 768px) */
+@media (min-width: 768px) {
+  body {
+    font-size: 1.35rem; /* 21.6px */
+  }
+  header.hero h1 {
+    font-size: 5rem; /* 80px */
+  }
+  header.hero p,
+  section p {
+    font-size: 1.4rem;
+  }
+  section h2 {
+    font-size: 2.75rem;
+  }
+  footer {
+    font-size: 1.1rem;
+  }
+  em {
+    font-size: 1.3rem; 
+  }
+}
+
+/* Desktop view (≥ 1200px) */
+@media (min-width: 1200px) {
+  body {
+    font-size: 1.5rem; /* 27.2px */
+  }
+  header.hero h1 {
+    font-size: 6rem; /* 96px */
+  }
+  header.hero p,
+  section p {
+    font-size: 1.5rem; /* 28.8px */
+  }
+  section h2 {
+    font-size: 3rem; /* 48px */
+  }
+  footer {
+    font-size: 1.2rem;
+  }
+  em {
+      font-size: 1.4rem; 
+  }
+}

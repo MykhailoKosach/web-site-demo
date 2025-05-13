@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Visual Storm – Aurelio Caminati</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: #3a2e1a;
+      background: #F5F5DC;
+      line-height: 1.6;
+    }
+    a { color: #7c5a1b; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header.hero {
+      background: #EDE8D0;
+      height: 60vh;
+      min-height: 350px;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; position: relative;
+      box-shadow: 0 4px 24px rgba(120,100,50,0.08);
+    }
+    header.hero h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      margin-bottom: .5rem;
+      color: #7c5a1b;
+      text-shadow: 0 2px 4px rgba(255,255,255,0.5);
+    }
+    header.hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: #3a2e1a;
+    }
+    .btn {
+      display: inline-block;
+      padding: .75rem 1.5rem;
+      background: #e2c799;
+      border: 2px solid #7c5a1b;
+      border-radius: 4px;
+      font-weight: bold;
+      color: #7c5a1b;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #f2e5c2;
+    }
+    section {
+      padding: 3rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .section-light {
+      background: #FFFDF4;
+    }
+    .section-dark {
+      background: #EDE8D0;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      border-bottom: 2px solid #e2c799;
+      display: inline-block;
+      padding-bottom: .5rem;
+      color: #7c5a1b;
+    }
+    section p { margin-bottom: 1.5rem; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+      gap: 1rem;
+    }
+    .placeholder-rect {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #e2c799;
+      border: 2px dashed #bfa77a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7c5a1b;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .director {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;
+    }
+    .director .placeholder-rect {
+      flex: 0 0 200px;
+      height: 200px;
+      aspect-ratio: unset;
+    }
+    .director .info { flex: 1; }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #EDE8D0;
+      color: #7c5a1b;
+      font-size: .9rem;
+    }
+    @media (max-width: 600px) {
+      header.hero h1 { font-size: 2rem; }
+      .director { flex-direction: column; align-items: flex-start; }
+      .director .placeholder-rect { width: 100%; max-width: 300px; margin-bottom: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1>A Visual Storm</h1>
+    <p>Documentary on avant-garde artist <strong>Aurelio Caminati</strong><br>&amp; Wild Atlantic inspiration</p>
+    <a href="#about" class="btn">Learn More</a>
+  </header>
+
+  <!-- About the Film -->
+  <section id="about" class="section-light">
+    <h2>About the Film</h2>
+    <p><em>A Visual Storm</em> traces Italian artist Aurelio Caminati’s postwar journey, exploring his avant-garde works and deep connection to Ireland’s rugged Wild Atlantic coast.</p>
+    <p>Shot over a decade (2012–2022), the film weaves oceanic imagery with Caminati’s evolving artistic vision-capturing storms, solitude, and the creative spark that emerges from nature’s fury.</p>
+  </section>
+
+  <!-- Featuring Artwork -->
+  <section class="section-dark">
+    <h2>Featuring Artwork</h2>
+    <p>A curated selection of Caminati’s paintings, installations and sketches, each piece reflecting the interplay of wind, water and human emotion.</p>
+    <div class="gallery">
+      <div class="placeholder-rect">photo</div>
+      <div class="placeholder-rect">photo</div>
+      <div class="placeholder-rect">photo</div>
+    </div>
+  </section>
+
+  <!-- Director & Contact -->
+  <section class="section-light">
+    <h2>Sinéad Walsh</h2>
+    <div class="director">
+      <div class="placeholder-rect">photo</div>
+      <div class="info">
+        <p><strong>Producer &amp; Director</strong> with a background in arts, education &amp; disability access.</p>
+        <p>Outcam Digital Ltd</p>
+        <p>Email: <a href="mailto:swalshout@gmail.com">swalshout@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Outcam Digital Ltd. All rights reserved.
+  </footer>
+
+</body>
+</html>
