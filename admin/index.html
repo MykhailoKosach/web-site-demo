@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex" />
     <title>Content Manager</title>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
+    <script src="https://unpkg.com/decap-cms@3.1.2/dist/decap-cms.js"></script>
   </head>
   <body>
     <div id="cms"></div>
@@ -20,7 +20,9 @@
           }
         });
       }
-      CMS.init();
+      if (window.CMS) {
+        window.CMS.init();
+      }
     </script>
   </body>
 </html>
