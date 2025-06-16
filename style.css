@@ -87,7 +87,7 @@ header.hero {
   text-align: center;
   position: relative;
   box-shadow: 0 4px 24px rgba(120,100,50,0.08);
-  background: rgba(245, 245, 220);
+  background-color: #ffffff;
 }
 
 /* header.hero::before {
@@ -160,7 +160,7 @@ section {
 }
 
 .section-light { background: #FFFDF4; }
-.section-dark { background: #EDE8D0; }
+.section-dark { background: #ffffff; }
 
 section h2 {
   font-size: 2rem;
