@@ -158,6 +158,12 @@ section {
   margin: 0 auto;
 }
 
+.directed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .section-light { background: #FFFDF4; }
 .section-dark { background: #ffffff; }
 
@@ -225,7 +231,7 @@ a{
 footer {
   text-align: center;
   padding: 2rem 3rem;
-  background: #FFFDF4;
+  background: #ffffff;
   color: #7c5a1b;
   font-size: .9rem;
   max-width: 800px;
