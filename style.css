@@ -27,6 +27,9 @@ h3, .btn, nav, footer {
     font-family: 'Dharma Gothic Rounded', sans-serif;
     font-weight: 700;
 }
+.thanks {
+  text-align: center;
+}
 body, p, li, a, span {
     font-family: 'Dharma Gothic Rounded', sans-serif;
     font-weight: 400;
