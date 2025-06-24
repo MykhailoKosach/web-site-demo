@@ -190,7 +190,7 @@ section p { margin-bottom: 1.5rem; }
   object-position: center;
   margin: 0;
   display: block;
-  border: 2px solid #bfa77a;
+  /* border: 2px solid #bfa77a; */
 }
 .gallery {
   display: grid;
@@ -207,7 +207,12 @@ a{
   height: 300px;
   object-fit: cover;
   object-position: center;
-  border: 2px solid #bfa77a;
+  /* border: 2px solid #bfa77a; */
+}
+
+.santa{
+  object-fit: cover;
+  object-position: top;
 }
 
 .director {
@@ -221,7 +226,7 @@ a{
   flex: 0 0 200px;
   width: 200px;
   height: auto;
-  border: 2px solid #bfa77a;
+  /* border: 2px solid #bfa77a; */
 }
 
 .director .info { flex: 1; }
@@ -371,7 +376,7 @@ footer {
   max-height: 90%;
   object-fit: contain;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
-  border: 2px solid #e2c799;
+  /* border: 2px solid #e2c799; */
 }
 
 .overlay-close {
