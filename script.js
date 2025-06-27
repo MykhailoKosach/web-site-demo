@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const closeButton = overlay.querySelector('.overlay-close');
 
   // Find all clickable images
-  const clickableImages = document.querySelectorAll('.gallery img, .main-img, .director img');
+  const clickableImages = document.querySelectorAll('.gallery img, .main-img, .director img, .director-photo');
 
   // Add click event to each image
   clickableImages.forEach(img => {
