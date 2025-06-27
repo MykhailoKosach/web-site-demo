@@ -260,17 +260,16 @@ footer {
 
 .contacts{
   display: flex;
-  flex-direction: raw;
+  flex-direction: column;
   align-items: center;
-  gap: 2rem;
 }
 
-.contact-us {
+/* .contact-us {
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: left;
-}
+} */
 
 @media (max-width: 767px) {
   body {
@@ -439,11 +438,15 @@ footer {
   transform: scale(1.02);
 }
 
+#trailer{
+  flex-direction: column;
+}
+
 @media (min-width: 768px) {
   .news-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  header.hero, #about, #artist, #artwork, .section-light, .section-dark, footer {
+  header.hero, #about, #trailer, #artist, #artwork, .section-light, .section-dark, footer {
     margin: 0 5rem; /* Medium side gaps */
     max-width: none;
     padding: 2rem;
@@ -464,7 +467,7 @@ footer {
     flex-direction: column;
     align-items: center;
   }
-  header.hero, #about, #artist, #artwork, .section-light, .section-dark, footer {
+  header.hero, #about, #trailer, #artist, #artwork, .section-light, .section-dark, footer {
     max-width: none;
     padding: 1rem;
   }
@@ -477,7 +480,7 @@ footer {
   .news-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  header.hero, #about, #artist, #artwork, .section-light, .section-dark, footer {
+  header.hero, #about, #trailer, #artist, #artwork, .section-light, .section-dark, footer {
     margin: 0 auto;
     max-width: 1000px; /* Fixed width with auto margins creates side gaps */
   }
