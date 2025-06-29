@@ -178,4 +178,54 @@ document.addEventListener('DOMContentLoaded', function() {
     const secs = Math.floor(seconds % 60);
     return mins + ':' + (secs < 10 ? '0' : '') + secs;
   }
+
+  // Navigation Menu Functionality
+  const navLinks = document.querySelectorAll('.nav-menu a');
+  const sections = document.querySelectorAll('section, header');
+
+  // Smooth scrolling for navigation links
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      
+      if (targetSection) {
+        targetSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // Highlight active section on scroll
+  function updateActiveSection() {
+    let current = '';
+    const scrollPosition = window.scrollY + 100; // Offset for better detection
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    // Update active class
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('data-section') === current || 
+          link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  // Listen for scroll events
+  window.addEventListener('scroll', updateActiveSection);
+  
+  // Initial call to set active section
+  updateActiveSection();
 });
