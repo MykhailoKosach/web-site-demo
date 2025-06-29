@@ -46,6 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Custom Video Controls Functionality
   const video = document.querySelector('.custom-video');
+  const videoContainer = document.querySelector('.video-container');
+  const bigPlayButton = document.getElementById('bigPlayButton');
   const playPauseBtn = document.getElementById('playPauseBtn');
   const playIcon = document.querySelector('.play-icon');
   const pauseIcon = document.querySelector('.pause-icon');
@@ -56,19 +58,51 @@ document.addEventListener('DOMContentLoaded', function() {
   const volumeBtn = document.getElementById('volumeBtn');
   const fullscreenBtn = document.getElementById('fullscreenBtn');
 
-  if (video) {
-    // Play/Pause functionality
-    playPauseBtn.addEventListener('click', function() {
-      if (video.paused) {
-        video.play();
+  if (video && bigPlayButton) {
+    // Big play button functionality
+    bigPlayButton.addEventListener('click', function() {
+      video.play();
+      videoContainer.classList.add('playing');
+      if (playIcon && pauseIcon) {
         playIcon.style.display = 'none';
         pauseIcon.style.display = 'inline';
-      } else {
-        video.pause();
-        playIcon.style.display = 'inline';
-        pauseIcon.style.display = 'none';
       }
     });
+
+    // Video click to toggle play/pause
+    video.addEventListener('click', function() {
+      if (video.paused) {
+        video.play();
+        videoContainer.classList.add('playing');
+        if (playIcon && pauseIcon) {
+          playIcon.style.display = 'none';
+          pauseIcon.style.display = 'inline';
+        }
+      } else {
+        video.pause();
+        videoContainer.classList.remove('playing');
+        if (playIcon && pauseIcon) {
+          playIcon.style.display = 'inline';
+          pauseIcon.style.display = 'none';
+        }
+      }
+    });
+    // Play/Pause functionality
+    if (playPauseBtn) {
+      playPauseBtn.addEventListener('click', function() {
+        if (video.paused) {
+          video.play();
+          videoContainer.classList.add('playing');
+          playIcon.style.display = 'none';
+          pauseIcon.style.display = 'inline';
+        } else {
+          video.pause();
+          videoContainer.classList.remove('playing');
+          playIcon.style.display = 'inline';
+          pauseIcon.style.display = 'none';
+        }
+      });
+    }
 
     // Update progress bar
     video.addEventListener('timeupdate', function() {
@@ -115,10 +149,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Video ended event
     video.addEventListener('ended', function() {
-      playIcon.style.display = 'inline';
-      pauseIcon.style.display = 'none';
-      progressFill.style.width = '0%';
+      videoContainer.classList.remove('playing');
+      if (playIcon && pauseIcon) {
+        playIcon.style.display = 'inline';
+        pauseIcon.style.display = 'none';
+      }
+      if (progressFill) {
+        progressFill.style.width = '0%';
+      }
       video.currentTime = 0;
+    });
+
+    // Video pause event
+    video.addEventListener('pause', function() {
+      videoContainer.classList.remove('playing');
+    });
+
+    // Video play event
+    video.addEventListener('play', function() {
+      videoContainer.classList.add('playing');
     });
   }
 

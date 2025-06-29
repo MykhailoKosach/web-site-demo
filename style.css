@@ -736,4 +736,82 @@ footer {
   }
 }
 
+/* Big Play Button Overlay */
+.big-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  padding: 2rem 2rem;
+  font-family: 'Dharma Gothic Rounded', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: #FFFDF4;
+  background: #d4af37;
+  border: none;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.big-play-button:hover {
+  background: #b8941f;
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+.big-play-button:active {
+  background: #7c5a1b;
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.big-play-icon {
+  margin-left: 5px; /* Slight offset to center the triangle visually */
+}
+
+/* Hide big play button when video is playing */
+.video-container.playing .big-play-button {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Add pulse animation to big play button */
+@keyframes big-play-pulse {
+  0% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4), 0 0 0 10px rgba(212, 175, 55, 0.1);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.big-play-button {
+  animation: big-play-pulse 2s ease-in-out infinite;
+}
+
+.big-play-button:hover {
+  animation: none;
+}
+
+/* Mobile responsiveness for big play button */
+@media (max-width: 767px) {
+  .big-play-button {
+    width: 24px;
+    height: 24px;
+    font-size: 2rem;
+    padding: 1.5rem;
+  }
+}
+
 
