@@ -182,6 +182,35 @@ document.addEventListener('DOMContentLoaded', function() {
   // Navigation Menu Functionality
   const navLinks = document.querySelectorAll('.nav-menu a');
   const sections = document.querySelectorAll('section, header');
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navMenu = document.querySelector('.nav-menu');
+  const navList = document.getElementById('navList');
+
+  // Hamburger menu toggle
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('click', function() {
+      hamburgerBtn.classList.toggle('active');
+      navMenu.classList.toggle('mobile-open');
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!navMenu.contains(e.target)) {
+        hamburgerBtn.classList.remove('active');
+        navMenu.classList.remove('mobile-open');
+      }
+    });
+
+    // Close mobile menu when clicking on nav links
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 767) {
+          hamburgerBtn.classList.remove('active');
+          navMenu.classList.remove('mobile-open');
+        }
+      });
+    });
+  }
 
   // Smooth scrolling for navigation links
   navLinks.forEach(link => {
