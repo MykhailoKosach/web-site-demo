@@ -220,17 +220,17 @@ a{
 
 .director img {
   flex: 0 0 200px;
-  width: 40%;
-  height: auto;
+  width: auto;
+  height: 450px;
   /* border: 2px solid #bfa77a; */
 }
 
-.director-photo{
+/* .director-photo{
   flex: 0 0 200px;
-  width: 200px;
-  height: auto;
-  max-height: 450px;
-}
+  width: auto;
+  height: 250px;
+  /* max-height: 450px;
+} */
 
 .director .info { flex: 1; }
 
@@ -253,7 +253,7 @@ footer {
   .main-img {width: 100%;}
   header.hero h1 { font-size: 2rem; }
   .director { flex-direction: column; align-items: flex-start; }
-  .director img { width: 100%; max-width: 300px; margin-bottom: 1rem; }
+  .director img { width: 100%; max-width: 200px; margin-bottom: 1rem; }
   img.director img  {order: 1;}
   div.info  {order: 2;}
 }
