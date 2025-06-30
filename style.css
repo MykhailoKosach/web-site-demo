@@ -810,6 +810,7 @@ footer {
     width: 24px;
     height: 24px;
     font-size: 2rem;
+
     padding: 1.5rem;
   }
 }
@@ -818,7 +819,7 @@ footer {
 .nav-menu {
   position: fixed;
   top: 50%;
-  right: 20px;
+  right: 10px;
   transform: translateY(-50%);
   z-index: 1000;
   background: rgba(255, 253, 244, 0.95);
@@ -864,7 +865,8 @@ footer {
   position: relative;
   margin: 0;
   text-align: center;
-  min-width: 80px;
+  min-width: 50px;
+  right: inherit;
 }
 
 .nav-menu a:hover {
@@ -1035,6 +1037,7 @@ footer {
   .nav-menu a {
     padding: 10px 12px;
     font-size: 0.8rem;
+    right: 10px;
   }
 }
 
