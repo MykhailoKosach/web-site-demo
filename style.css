@@ -240,6 +240,7 @@ footer {
   font-size: .9rem;
   max-width: 800px;
   margin: 0 auto;
+  margin-top: 100px;
 }
 
 @media (max-width: 600px) {
@@ -549,6 +550,9 @@ footer {
   header.hero, #about, #trailer, #artist, #artwork, .section-light, .section-dark, footer {
     margin: 0 auto;
     max-width: 1000px; /* Fixed width with auto margins creates side gaps */
+  }
+  footer{
+    margin-top: 50px;
   }
 
 }
