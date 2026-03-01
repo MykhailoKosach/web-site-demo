@@ -1074,4 +1074,31 @@ footer {
   }
 }
 
+/* ── Film Team ──────────────────────────────────────────── */
+.film-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem 3rem;
+  max-width: 900px;
+  margin: 2rem auto 0;
+}
 
+.film-team-role h3 {
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #dc2626;
+  margin-bottom: 0.4rem;
+}
+
+.film-team-role p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .film-team-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
